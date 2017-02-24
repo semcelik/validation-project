@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class PropertiesValidator implements IValidator {
 
-  private final String PATTERN = "^[a-zA-Z]+[a-zA-Z_0-9\\s]+=[\\s]*[a-zA-Z0-9]+";
+  private final String PATTERN = "^[a-zA-Z]+[a-zA-Z_0-9\\s-]+=[\\s-]*[\\w-]+";
 
   private final String COMMENT = "^[#]";
 
