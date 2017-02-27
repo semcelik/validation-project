@@ -4,11 +4,11 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.semih.validate</groupId>
-  <artifactId>validate-maven-plugin</artifactId>
+  <groupId>com.semih.validator</groupId>
+  <artifactId>validator-maven-plugin</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
-  <name>--Validate Plugin--</name>
+  <name>--Validator Plugin--</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
@@ -39,17 +39,26 @@
       <version>1.4.1</version>
     </dependency>
 
-
   </dependencies>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.4.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
     <plugins>
       <plugin>
-        <groupId>com.semih.validate</groupId>
-        <artifactId>validate-maven-plugin</artifactId>
+        <groupId>com.semih.validator</groupId>
+        <artifactId>validator-maven-plugin</artifactId>
         <version>1.0-SNAPSHOT</version>
       </plugin>
-<!--
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -62,28 +71,16 @@
             </goals>
             <configuration>
               <rules>
-
-                <requireOS>
-                  <name>Windows 100</name>
-                  <family>windows</family>
-                  <arch>x86</arch>
-                  <message>#########Windows 8, x86 ozeliklerini saglamiyor.#########</message>
-                </requireOS>
-
-                <requireFilesDontExist>
-                  <files>
-                    <file>${project.basedir}/sample23.yml</file>
-                  </files>
-                  <message>#########sample2 var..</message>
-                </requireFilesDontExist>
+                <evaluateBeanshell>
+                  <condition>int i = 0 ; while(i != 10){System.out.println("i: " + i); i++;}</condition>
+                </evaluateBeanshell>
               </rules>
               <fail>true</fail>
-
             </configuration>
           </execution>
         </executions>
       </plugin>
--->
+
 
     </plugins>
   </build>
