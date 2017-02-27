@@ -13,7 +13,7 @@ public class PropertiesValidator implements IValidator {
 
   private final String COMMENT = "^[#!]";
 
-  private int counter = 1;
+  private int counter = 0;
 
   private String file = null;
 
