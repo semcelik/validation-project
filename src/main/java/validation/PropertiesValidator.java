@@ -8,11 +8,12 @@ import java.util.regex.Pattern;
 
 public class PropertiesValidator implements IValidator {
 
-  private final String PATTERN = "^[a-zA-Z]+[a-zA-Z_0-9\\s]+=[\\s]*[a-zA-Z0-9]+";
+  //private final String PATTERN = "^[a-zA-Z]+[a-zA-Z_0-9\\s]+=[\\s]*[a-zA-Z0-9]+";
+  private final String PATTERN = "^[a-zA-Z]+[\\s\\S]+(=|:)[\\s]*\\s*\\S+";
 
-  private final String COMMENT = "^[#]";
+  private final String COMMENT = "^[#!]";
 
-  private int counter = 0;
+  private int counter = 1;
 
   private String file = null;
 
@@ -30,13 +31,17 @@ public class PropertiesValidator implements IValidator {
       BufferedReader br = new BufferedReader(fr);
       line = br.readLine();
       while (line != null) {
+
+        while (line.endsWith("\\")) {
+          line = line + br.readLine();
+        }
+
         matcher = pattern.matcher(line);
         commentMatcher = comment.matcher(line);
         if (!matcher.find() && !commentMatcher.find()) {
           System.out.println("WRONG SYNTAX FOUND: " + line);
           counter++;
         }
-
         line = br.readLine();
       }
       if (counter == 0) {
