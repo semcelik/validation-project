@@ -7,4 +7,4 @@
 -yaml<br><br>
 
 mvn validator:properties -> checks syntax validation for "config.properties" file<br>
-mvn validator:yaml       -> checks syntax validation for "sample.yml" file<br>
+mvn validator:yaml       -> checks syntax validation for "sample.yml" file<br><br>
