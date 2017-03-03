@@ -24,19 +24,25 @@
     </pluginManagement>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <configuration>
-          <rules>
-            <evaluateBeanshell>
-              <condition>print("#######second-it####### evaluateBeanshell");1==1
-              </condition>
-            </evaluateBeanshell>
-          </rules>
-        </configuration>
+        <version>1.4.1</version>
         <executions>
           <execution>
+            <id>enforce-counter</id>
             <goals>
+              <goal>enforce</goal>
             </goals>
+            <configuration>
+              <rules>
+                <evaluateBeanshell>
+                  <condition>
+                    print("#########secont-it pom.xml##########");1==1
+                  </condition>
+                </evaluateBeanshell>
+              </rules>
+              <fail>true</fail>
+            </configuration>
           </execution>
         </executions>
       </plugin>
