@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <groupId>com.semih.validator.it</groupId>
+  <artifactId>sub2-pom</artifactId>
+  <version>1.0</version>
+  <modelVersion>4.0.0</modelVersion>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-enforcer-plugin</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.4.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <configuration>
+          <rules>
+            <evaluateBeanshell>
+              <condition>print("#######second-it####### evaluateBeanshell");1==1
+              </condition>
+            </evaluateBeanshell>
+          </rules>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
