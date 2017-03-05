@@ -1,6 +1,6 @@
 package validation;
 
-public interface IValidator {
+public interface ValidatorImpl {
 
   void validate(String file);
 }

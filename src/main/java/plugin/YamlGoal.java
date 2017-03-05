@@ -14,7 +14,7 @@ public class YamlGoal extends AbstractMojo {
   public void execute() throws MojoExecutionException, MojoFailureException {
     System.out.println("########################################");
     YamlValidator yamlValidator = new YamlValidator();
-    yamlValidator.validate("sample.yml");
+    yamlValidator.validate("src\\test\\resources\\yaml\\sample.yml");
     System.out.println("########################################");
   }
 }

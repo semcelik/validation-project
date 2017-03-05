@@ -6,10 +6,9 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class PropertiesValidator implements IValidator {
+public class PropertiesValidator implements ValidatorImpl {
 
   private final String PATTERN = "^[a-zA-Z]+[\\s\\S]+(=|:)[\\s]*\\s*\\S+";
-
 
   private final String COMMENT = "^[#!]";
 

@@ -15,7 +15,7 @@ public class PropertiesGoal extends AbstractMojo {
   public void execute() throws MojoExecutionException, MojoFailureException {
     System.out.println("########################################");
     PropertiesValidator propertiesValidator = new PropertiesValidator();
-    propertiesValidator.validate("config.properties");
+    propertiesValidator.validate("src\\test\\resources\\properties\\config.properties");
     System.out.println("########################################");
   }
 }

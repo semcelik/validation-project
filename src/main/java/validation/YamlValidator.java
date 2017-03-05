@@ -5,12 +5,13 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import org.yaml.snakeyaml.Yaml;
 
-public class YamlValidator implements IValidator {
+public class YamlValidator implements ValidatorImpl {
 
   public void validate(String file) {
     System.out.println("File: " + file + "\n");
     Yaml yml = new Yaml();
     File f = new File(file);
+    System.out.println(f.getAbsolutePath());
     try {
       InputStream inputStream = new FileInputStream(f);
       yml.load(inputStream);
