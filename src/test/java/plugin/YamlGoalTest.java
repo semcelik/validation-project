@@ -7,9 +7,10 @@ import org.junit.Test;
 import static org.junit.Assert.assertTrue;
 
 public class YamlGoalTest {
-@Test
-  public void dummyTest(){
+
+  @Test
+  public void dummyTest() {
+
     assertTrue(true);
   }
-
 }
