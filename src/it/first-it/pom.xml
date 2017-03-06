@@ -28,6 +28,12 @@
       <version>3.5</version>
       <scope>provided</scope><!-- annotations are needed only to build the plugin -->
     </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugin-testing</groupId>
+      <artifactId>maven-plugin-testing-harness</artifactId>
+      <version>3.3.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
