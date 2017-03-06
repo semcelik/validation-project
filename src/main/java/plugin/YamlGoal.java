@@ -2,6 +2,8 @@ package plugin;/*
  * Created by semcelik on 24.02.2017.
  */
 
+import java.io.File;
+import java.io.FilenameFilter;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
@@ -13,8 +15,18 @@ public class YamlGoal extends AbstractMojo {
 
   public void execute() throws MojoExecutionException, MojoFailureException {
     System.out.println("########################################");
-    YamlValidator yamlValidator = new YamlValidator();
-    yamlValidator.validate("src\\test\\resources\\yaml\\sample.yml");
+    File file = new File("src\\test\\resources\\yaml\\");
+    File[] yamlFiles = file.listFiles(new FilenameFilter() {
+      public boolean accept(File dir, String name) {
+        return name.endsWith(".yml");
+      }
+    });
+    for (File countYaml : yamlFiles){
+      YamlValidator yamlValidator = new YamlValidator();
+      yamlValidator.validate(countYaml.getAbsolutePath());
+      System.out.println("\n-------------------------");
+
+    }
     System.out.println("########################################");
   }
 }

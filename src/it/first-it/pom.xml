@@ -64,22 +64,6 @@
           </execution>
         </executions>
       </plugin>
-
-      <plugin>
-        <groupId>com.semih.validator</groupId>
-        <artifactId>validator-maven-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
-        <executions>
-          <execution>
-            <id>${sem}</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>properties</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
     </plugins>
   </build>
 </project>

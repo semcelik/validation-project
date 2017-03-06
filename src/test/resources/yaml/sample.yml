@@ -9,5 +9,8 @@ tools:
 flows:
   master:
   - (on master, name mvn deploy) mvn clean deploy -B 
-  pr:
+  1'^+^'%+%^+%'!âsdas
+  afasğüş4l24leqwd
+  zxcz
+  FALSe\\\
   - call: master
