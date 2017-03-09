@@ -22,6 +22,7 @@ public class PropertiesOnCurrentDirMojo extends AbstractMojo {
         return name.endsWith(".properties");
       }
     });
+
     log.info("########################################");
     if (propertiesFiles.length > 0) {
       for (File countFile : propertiesFiles) {

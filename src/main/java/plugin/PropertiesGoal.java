@@ -14,12 +14,10 @@ import validation.PropertiesValidator;
 
 @Mojo(name = "properties")
 public class PropertiesGoal extends AbstractMojo {
+
   private final static Logger log = LoggerFactory.getLogger(PropertiesGoal.class);
 
-
   public void execute() throws MojoExecutionException, MojoFailureException {
-    MavenProject mavenProject = new MavenProject();
-    Properties properties = mavenProject.getProperties();
 
     log.info("########################################");
     File f = new File("src\\test\\resources\\properties\\");
