@@ -1,14 +1,9 @@
-package enforcer;/*
- * Created by semcelik on 09.03.2017.
- */
+package enforcer;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FilenameFilter;
 import org.apache.maven.enforcer.rule.api.EnforcerRule;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleHelper;
-import org.apache.maven.plugin.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import validation.PropertiesValidator;
@@ -52,12 +47,6 @@ public class ValidationRule implements EnforcerRule {
   }
 
   public String getCacheId() {
-    /*if (this.fileName == null) {
-      return this.fileNameWithPath;
-    } else {
-      return this.fileName;
-    }
-  } */
     return this.fileName;
   }
 }

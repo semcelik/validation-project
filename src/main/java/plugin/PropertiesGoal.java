@@ -2,12 +2,10 @@ package plugin;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import java.util.Properties;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.project.MavenProject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import validation.PropertiesValidator;
