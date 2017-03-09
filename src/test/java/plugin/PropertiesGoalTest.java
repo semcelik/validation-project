@@ -1,18 +1,12 @@
-package plugin;/*
- * Created by semcelik on 27.02.2017.
- */
+package plugin;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import junit.framework.TestCase;
 import org.junit.Test;
-import validation.PropertiesValidator;
 
-import static junit.framework.TestCase.assertNotNull;
-import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertNotEquals;
 
-public class PropertiesGoalTest extends TestCase {
+public class PropertiesGoalTest {
 
   @Test
   public void testFiles() {

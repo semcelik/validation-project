@@ -1,6 +1,4 @@
-package enforcer.rule;/*
- * Created by semcelik on 06.03.2017.
- */
+package enforcer.rule;
 
 import org.apache.maven.enforcer.rule.api.EnforcerRule;
 import org.apache.maven.enforcer.rule.api.EnforcerRuleException;

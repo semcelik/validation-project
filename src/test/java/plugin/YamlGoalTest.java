@@ -1,15 +1,12 @@
-package plugin;/*
- * Created by semcelik on 03.03.2017.
- */
+package plugin;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import junit.framework.TestCase;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotEquals;
 
-public class YamlGoalTest extends TestCase{
+public class YamlGoalTest {
 
   @Test
   public void testFiles() {
