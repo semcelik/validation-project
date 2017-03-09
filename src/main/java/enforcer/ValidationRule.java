@@ -34,8 +34,10 @@ public class ValidationRule implements EnforcerRule {
       f = new File(fileNameWithPath);
       if (f.exists()) {
         propertiesValidator.validate(f.getAbsolutePath());
-      }else{
-      log.error("##File Not Found!\n");}
+      } else {
+        log.info("File: " + f.getAbsolutePath() + "\n");
+        log.warn("##File Not Found!\n");
+      }
     }
 
     log.info("########################################");
@@ -57,4 +59,5 @@ public class ValidationRule implements EnforcerRule {
     }
   } */
     return this.fileName;
-}}
+  }
+}
