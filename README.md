@@ -14,7 +14,7 @@ mvn validator:propOnCurrentDir -> checks syntax validation for ".properties" fil
 
 
 3- Created Enforcer plugin custom rule named as validationRule with 2 parameters;<br>
--DfileName= -> checks syntax validation for src/test/resources/properties/\<args><br>
--DfileNameWithPath= -> chech syntax validation for \<args> path<br>
+-DfileName=\<args> -> checks syntax validation for src/test/resources/properties/\<args><br>
+-DfileNameWithPath=\<args> -> chech syntax validation for \<args> path<br>
 Example: mvn enforcer:enforce@validationRule -DfileName=config.properties<br>
 Example: mvn enforcer:enforce@validationRule -DfileNameWithPath=src/test/resources/properties/config.properties
