@@ -8,6 +8,7 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import validation.Context;
 import validation.YamlValidator;
 
 @Mojo(name = "yaml")
@@ -16,6 +17,7 @@ public class YamlGoal extends AbstractMojo {
   private final static Logger log = LoggerFactory.getLogger(YamlGoal.class);
 
   public void execute() throws MojoExecutionException, MojoFailureException {
+    Context context = new Context(new YamlValidator());
     log.info("########################################");
     File file = new File("src\\test\\resources\\yaml\\");
     File[] yamlFiles = file.listFiles(new FilenameFilter() {
@@ -24,8 +26,7 @@ public class YamlGoal extends AbstractMojo {
       }
     });
     for (File countYaml : yamlFiles) {
-      YamlValidator yamlValidator = new YamlValidator();
-      yamlValidator.validate(countYaml.getAbsolutePath());
+      context.executeValidator(countYaml.getAbsolutePath());
       log.info("\n-------------------------");
     }
     log.info("########################################");

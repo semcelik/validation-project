@@ -17,7 +17,7 @@ public class ValidationRule implements EnforcerRule {
   private String fileNameWithPath;
 
   public void execute(EnforcerRuleHelper helper) throws EnforcerRuleException {
-
+    
     log.info("########################################\n");
 
     File f = new File("src\\test\\resources\\properties\\" + fileName);
