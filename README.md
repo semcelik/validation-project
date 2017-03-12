@@ -1,20 +1,14 @@
-# validation-example
-1- Created plugin named as<br>
--validator<br><br>
+#validation-project
 
-2- Created 3 goals in validate named as; <br>
--properties<br>
--yaml<br>
--propOnCurrentDir<br><br>
+Created project named as validation-project<br>
+Added 3 submodules named as;
 
+- validation-enforcer-rules: has 2 enforcer rules (both named as validationRule)
+- validation-operators: has validation code of project. Designed with Strategy Design Pattern
+- validation-samples: has resource files (.properties or .yaml)
 
-mvn validator:properties -> checks syntax validation for ".properties" files in src/test/resources/properties/<br>
-mvn validator:yaml -> checks syntax validation for ".yml" files in src/test/resources/yaml<br>
-mvn validator:propOnCurrentDir -> checks syntax validation for ".properties" files in current directory (No Need Pom)<br><br> 
+Usage:
+- mvn -pl validation-samples enforcer:enforce@validationRule -Pyaml -DfileName=\<args\>
+- mvn -pl validation-samples enforcer:enforce@validationRule -Pproperties -DfileName=\<args\>
 
-
-3- Created Enforcer plugin custom rule named as validationRule with 2 parameters;<br>
--DfileName=\<args> -> checks syntax validation for src/test/resources/properties/\<args><br>
--DfileNameWithPath=\<args> -> chech syntax validation for \<args> path<br>
-Example: mvn enforcer:enforce@validationRule -DfileName=config.properties<br>
-Example: mvn enforcer:enforce@validationRule -DfileNameWithPath=src/test/resources/properties/config.properties
+both parameters -Pyaml, -DfileName are mandatory
