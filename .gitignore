@@ -1,0 +1,10 @@
+##maven
+
+target/
+
+##idea
+
+.idea/
+.idea/workspace.xml
+*.iml
+
