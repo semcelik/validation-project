@@ -13,7 +13,7 @@ public class YamlValidator implements Validatable {
 
   public void validate(String file) {
     File f = new File(file);
-    LOG.info("File: " + file + "\n");
+    LOG.info("File: " + file);
     Yaml yml = new Yaml();
     try {
       InputStream inputStream = new FileInputStream(f);
