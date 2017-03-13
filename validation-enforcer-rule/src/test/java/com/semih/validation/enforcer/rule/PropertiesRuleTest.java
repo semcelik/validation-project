@@ -14,8 +14,6 @@ public class PropertiesRuleTest {
 
   private String wrongFileName;
 
-  private File file;
-
   @Before
   public void setUp() {
     fileNameWithPath = "..\\validation-samples\\src\\test\\resources\\properties\\sample.properties";
@@ -25,15 +23,15 @@ public class PropertiesRuleTest {
 
   @Test
   public void withPathTest() throws FileNotFoundException {
-    file = new File(fileNameWithPath);
+    File file = new File(fileNameWithPath);
     if (!file.exists()) {
       throw new FileNotFoundException();
     }
   }
 
-  @Test
+  @Test(expected = AssertionError.class)
   public void wrongInputTest() {
-    Assert.assertTrue(!new File(noFileName).exists());
-    Assert.assertTrue(!new File(wrongFileName).exists());
+    Assert.assertTrue(new File(noFileName).exists());
+    Assert.assertTrue(new File(wrongFileName).exists());
   }
 }

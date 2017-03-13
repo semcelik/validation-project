@@ -9,19 +9,15 @@ public class PropertiesValidatorTest {
 
   private String filePath;
 
-  private File file;
-
-  private PropertiesValidator propertiesValidator;
-
   @Before
   public void setUp() {
     filePath = "\\..\\validation-samples\\src\\test\\resources\\properties\\sample.properties";
   }
 
   @Test
-  public void withPathTest() throws FileNotFoundException {
-    file = new File(System.getProperty("user.dir") + filePath);
-    propertiesValidator = new PropertiesValidator();
+  public void testValidate() throws FileNotFoundException {
+    File file = new File(System.getProperty("user.dir") + filePath);
+    PropertiesValidator propertiesValidator = new PropertiesValidator();
     if (!file.exists()) {
       throw new FileNotFoundException();
     }

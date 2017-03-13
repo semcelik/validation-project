@@ -14,8 +14,6 @@ public class YamlRuleTest {
 
   private String wrongFileName;
 
-  private File file;
-
   @Before
   public void setUp() {
     fileNameWithPath = "..\\validation-samples\\src\\test\\resources\\yaml\\sample.yml";
@@ -24,17 +22,17 @@ public class YamlRuleTest {
   }
 
   @Test
-  public void withPathTest() throws FileNotFoundException {
-    file = new File(fileNameWithPath);
+  public void testWithPath() throws FileNotFoundException {
+    File file = new File(fileNameWithPath);
     if (!file.exists()) {
       System.out.println(file.getAbsoluteFile());
       throw new FileNotFoundException();
     }
   }
 
-  @Test
-  public void wrongInputTest() {
-    Assert.assertTrue(!new File(noFileName).exists());
-    Assert.assertTrue(!new File(wrongFileName).exists());
+  @Test(expected = AssertionError.class)
+  public void testWrongInput() {
+    Assert.assertTrue(new File(noFileName).exists());
+    Assert.assertTrue(new File(wrongFileName).exists());
   }
 }

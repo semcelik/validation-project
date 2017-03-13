@@ -9,19 +9,15 @@ public class YamlValidatorTest {
 
   private String filePath;
 
-  private File file;
-
-  private YamlValidator yamlValidator;
-
   @Before
   public void setUp() {
     filePath = "\\..\\validation-samples\\src\\test\\resources\\yaml\\sample.yml";
   }
 
   @Test
-  public void withPathTest() throws FileNotFoundException {
-    file = new File(System.getProperty("user.dir") + filePath);
-    yamlValidator = new YamlValidator();
+  public void testValidate() throws FileNotFoundException {
+    File file = new File(System.getProperty("user.dir") + filePath);
+    YamlValidator yamlValidator = new YamlValidator();
     if (!file.exists()) {
       throw new FileNotFoundException();
     }

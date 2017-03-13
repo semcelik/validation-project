@@ -16,7 +16,7 @@ public class ContextTest {
   }
 
   @Test
-  public void executeContextTest() {
+  public void testExecuteValidator() {
     Context contextProperties = new Context(new PropertiesValidator());
     Context contextYaml = new Context(new YamlValidator());
     contextProperties.executeValidator(System.getProperty("user.dir") + propertiesFilePath);
