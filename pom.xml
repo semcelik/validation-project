@@ -15,6 +15,7 @@
     <slf4j.version>1.7.24</slf4j.version>
     <yaml.version>1.17</yaml.version>
     <invoker.version>2.0.0</invoker.version>
+    <junit.version>4.12</junit.version>
   </properties>
 
   <modules>
@@ -45,6 +46,12 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-invoker-plugin</artifactId>
         <version>${invoker.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit.version}</version>
+        <scope>test</scope>
       </dependency>
       <!--custom dependency-->
       <dependency>
