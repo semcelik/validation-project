@@ -38,7 +38,6 @@ public class PropertiesRule implements EnforcerRule {
         for (File temp : files != null ? files : new File[0]) {
           context.executeValidator(temp.getAbsolutePath());
           LOG.info("------------------------------------------------------------------------");
-
         }
       } else {
         LOG.info("File: " + f.getAbsolutePath() + "\n");
@@ -46,7 +45,7 @@ public class PropertiesRule implements EnforcerRule {
       }
     }
 
-    LOG.info("########################################");
+    LOG.info("##################################################################");
   }
 
   public boolean isCacheable() {

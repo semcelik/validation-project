@@ -12,11 +12,16 @@
   <artifactId>validation-operators</artifactId>
   <name>${project.groupId}:${project.artifactId}:${project.version}</name>
 
-<dependencies>
-  <dependency>
-    <groupId>org.yaml</groupId>
-    <artifactId>snakeyaml</artifactId>
-  </dependency>
-</dependencies>
+  <dependencies>
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+    </dependency>
+  </dependencies>
 
 </project>
