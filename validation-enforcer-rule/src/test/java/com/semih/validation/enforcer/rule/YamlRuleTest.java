@@ -25,7 +25,6 @@ public class YamlRuleTest {
   public void testWithPath() throws FileNotFoundException {
     File file = new File(fileNameWithPath);
     if (!file.exists()) {
-      System.out.println(file.getAbsoluteFile());
       throw new FileNotFoundException();
     }
   }

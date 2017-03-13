@@ -14,6 +14,7 @@
     <enforcer.version>1.4.1</enforcer.version>
     <slf4j.version>1.7.24</slf4j.version>
     <yaml.version>1.17</yaml.version>
+    <invoker.version>2.0.0</invoker.version>
   </properties>
 
   <modules>
@@ -59,6 +60,27 @@
       <version>${slf4j.version}</version>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-invoker-plugin</artifactId>
+        <version>${invoker.version}</version>
+        <configuration>
+          <projectsDirectory>../validation-project</projectsDirectory>
+          <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>install</goal>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 
 </project>

@@ -22,7 +22,7 @@ public class PropertiesRuleTest {
   }
 
   @Test
-  public void withPathTest() throws FileNotFoundException {
+  public void testWithPath() throws FileNotFoundException {
     File file = new File(fileNameWithPath);
     if (!file.exists()) {
       throw new FileNotFoundException();
@@ -30,7 +30,7 @@ public class PropertiesRuleTest {
   }
 
   @Test(expected = AssertionError.class)
-  public void wrongInputTest() {
+  public void testWrongInput() {
     Assert.assertTrue(new File(noFileName).exists());
     Assert.assertTrue(new File(wrongFileName).exists());
   }
