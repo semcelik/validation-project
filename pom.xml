@@ -21,6 +21,7 @@
     <module>validation-operators</module>
     <module>validation-enforcer-rule</module>
     <module>validation-samples</module>
+    <module>validation-integration-test</module>
   </modules>
 
   <dependencyManagement>
@@ -39,6 +40,11 @@
         <groupId>org.yaml</groupId>
         <artifactId>snakeyaml</artifactId>
         <version>${yaml.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-invoker-plugin</artifactId>
+        <version>${invoker.version}</version>
       </dependency>
       <!--custom dependency-->
       <dependency>
@@ -60,26 +66,4 @@
       <version>${slf4j.version}</version>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-invoker-plugin</artifactId>
-        <version>${invoker.version}</version>
-        <configuration>
-          <projectsDirectory>../validation-project</projectsDirectory>
-          <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>install</goal>
-              <goal>verify</goal>
-              <goal>integration-test</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>
