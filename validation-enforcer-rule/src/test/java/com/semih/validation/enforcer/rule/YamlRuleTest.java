@@ -1,6 +1,5 @@
 package com.semih.validation.enforcer.rule;
 
-import com.semih.validation.enforcer.rule.YamlRule;
 import java.io.File;
 import java.io.FileNotFoundException;
 import org.junit.Assert;
@@ -22,12 +21,6 @@ public class YamlRuleTest {
     fileNameWithPath = "..\\validation-samples\\src\\test\\resources\\yaml\\sample.yml";
     noFileName = "..\\validation-samples\\src\\test\\resources\\yaml\\-";
     wrongFileName = "..\\validation-samples\\src\\test\\resources\\yaml\\wrongsample";
-  }
-
-  @Test
-  public void objectTest() {
-    YamlRule yamlRule = new YamlRule();
-    Assert.assertNotNull(yamlRule);
   }
 
   @Test

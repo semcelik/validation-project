@@ -1,6 +1,5 @@
 package com.semih.validation.enforcer.rule;
 
-import com.semih.validation.enforcer.rule.PropertiesRule;
 import java.io.File;
 import java.io.FileNotFoundException;
 import org.junit.Assert;
@@ -22,12 +21,6 @@ public class PropertiesRuleTest {
     fileNameWithPath = "..\\validation-samples\\src\\test\\resources\\properties\\sample.properties";
     noFileName = "..\\validation-samples\\src\\test\\resources\\properties\\-";
     wrongFileName = "..\\validation-samples\\src\\test\\resources\\properties\\wrongsample";
-  }
-
-  @Test
-  public void objectTest() {
-    PropertiesRule propertiesRule = new PropertiesRule();
-    Assert.assertNotNull(propertiesRule);
   }
 
   @Test

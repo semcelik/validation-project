@@ -2,7 +2,6 @@ package com.semih.validation.operators;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,12 +16,6 @@ public class YamlValidatorTest {
   @Before
   public void setUp() {
     filePath = "\\..\\validation-samples\\src\\test\\resources\\yaml\\sample.yml";
-  }
-
-  @Test
-  public void objectTest() {
-    yamlValidator = new YamlValidator();
-    Assert.assertNotNull(yamlValidator);
   }
 
   @Test
