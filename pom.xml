@@ -74,6 +74,7 @@
           <execution>
             <goals>
               <goal>install</goal>
+              <goal>verify</goal>
               <goal>integration-test</goal>
             </goals>
           </execution>
@@ -81,6 +82,4 @@
       </plugin>
     </plugins>
   </build>
-
-
 </project>
