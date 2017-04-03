@@ -17,7 +17,6 @@
     <fileName>-</fileName>
   </properties>
 
-
   <profiles>
     <profile>
       <id>yaml</id>
