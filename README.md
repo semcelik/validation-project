@@ -1,4 +1,5 @@
 #validation-project
+This project checks validation for .yaml and .properties files
 
 Created project named as validation-project<br>
 Added 4 submodules named as;
